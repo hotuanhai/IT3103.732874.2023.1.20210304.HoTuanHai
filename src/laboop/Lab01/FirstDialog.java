@@ -3,14 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package laboop.Lab01;
+import javax.swing.JOptionPane;
+public class FirstDialog {
 
-/**
- *
- * @author Admin
- */
-public class bai1 {
-    public static void main(String[] args) {
-        System.out.println("hi");
-    }
-            
+	public static void main(String[] args) {
+		JOptionPane.showMessageDialog(null, "Hello World! How are you?");
+		System.exit(0);
+		
+	}
+
 }
