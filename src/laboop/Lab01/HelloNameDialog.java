@@ -4,11 +4,11 @@
  */
 package laboop.Lab01;
 import javax.swing.JOptionPane;
-public class HelloNameDialog {
+public class HelloNameDialog {//de tao dialogue
 	public static void main(String[] args) {
-		String result;
-		result = JOptionPane.showInputDialog("Please enter your name:");
-		JOptionPane.showMessageDialog(null, "Hello "+ result + "!");
-		System.exit(0);
+		String result;//tao sring result
+		result = JOptionPane.showInputDialog("Please enter your name:");//lay input vao result, ham tra ve xau dc nhap
+		JOptionPane.showMessageDialog(null, "Hello "+ result + "!");//in ra
+		System.exit(0);//exit khoi he thong
 	}
 }
