@@ -37,4 +37,27 @@ public class Cart {
                 }              
             }
     }
+    
+    public void searchByTitle(String title){
+        for(int i=0; i<MAX_NUMBERS_ORDERED;++i){
+            if(itemsOrdered[i]!=null && (itemsOrdered[i].getTitle()).equals(title)){
+                System.out.println(itemsOrdered[i]);
+                break;
+            }
+        }
+    }
+    public void print(){
+        int index=0;
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        for(int i=0; i<MAX_NUMBERS_ORDERED;++i){
+            if(itemsOrdered[i]!=null ){
+                ++index;
+                System.out.print(index + ". ");
+                System.out.println(itemsOrdered[i]);
+            }
+        }
+        System.out.println("Total cost: " + String.format("%.2f", this.totalCost()));
+        System.out.println("***************************************************");
+    }
 }
