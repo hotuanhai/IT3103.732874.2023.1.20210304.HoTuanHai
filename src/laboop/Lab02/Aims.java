@@ -14,7 +14,7 @@ public class Aims {
 
         dvd3.info();
         dvd1.info(); //dvd3==dvd1
-    }
+    
 
         System.out.println("Total Cost is: ");//in ra cost
         System.out.println(String.format("%.2f", anOrder.totalCost()));
