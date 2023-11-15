@@ -73,13 +73,7 @@ public class DigitalVideoDisc {
         return super.equals(obj); 
     }    
 
-    
 
-//    @Override
-//    public String toString() {
-//        return "DVD" + " - " + title + " - " + category + " - " + director + " - " + length + " - " + cost + "$";
-//    }
- 
     @Override
     public String toString() {
         final var joiner = new StringJoiner(" - ",  "DVD - ", "");
@@ -94,4 +88,5 @@ public class DigitalVideoDisc {
         joiner.add("" + cost + "");
         return joiner.toString();
     }   
+
 }
