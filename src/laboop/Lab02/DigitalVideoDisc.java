@@ -1,4 +1,7 @@
 package laboop.Lab02;
+
+import java.util.StringJoiner;
+
 public class DigitalVideoDisc {
     private String title;
     private String category;
@@ -60,7 +63,20 @@ public class DigitalVideoDisc {
         return super.equals(obj); 
     }
 
-    
+    @Override
+    public String toString() {
+        final var joiner = new StringJoiner(" - ",  "DVD - ", "");
+        joiner.add("" + title + "");
+        joiner.add("" + category + "");
+        if (director != null) {
+            joiner.add("" + director + "");
+        }
+        if (length != 0) {
+            joiner.add("" + length + "");
+        }
+        joiner.add("" + cost + "");
+        return joiner.toString();
+    }   
     
     
     
