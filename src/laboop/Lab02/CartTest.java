@@ -1,6 +1,8 @@
 
 package laboop.Lab02;
 
+import laboop.Lab02.aims.media.DigitalVideoDisc;
+
 public class CartTest {
     public static void main(String[] args) {
         Cart cart = new Cart();

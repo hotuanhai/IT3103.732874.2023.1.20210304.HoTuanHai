@@ -1,63 +1,46 @@
 package laboop.Lab02;
+
+import java.util.ArrayList;
+import laboop.Lab02.aims.media.DigitalVideoDisc;
+import java.util.Arrays;
+import laboop.Lab02.aims.media.Media;
+
 public class Cart {
     private double cost=0;//tong tien
-    public static final int MAX_NUMBERS_ORDERED = 20;
-    private DigitalVideoDisc itemsOrdered [] = new DigitalVideoDisc [MAX_NUMBERS_ORDERED];
-    private int qtyOrdered = 0;
+    public static final int MAX_NUMBERS_ORDERED = 20;//max maeia
+    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
     
-    public void addDigitalVideoDisc(DigitalVideoDisc disc){//add to cart
-        if(qtyOrdered == MAX_NUMBERS_ORDERED){          // check neu cart day
-            System.out.println("the cart is full");
+    public void addMedia(Media me){//them media
+        if(!itemsOrdered.contains(me)){
+            itemsOrdered.add(me);
+        System.out.println("Track added successfully: " + me.getTitle());
+        } else {
+            System.out.println("Track already exists in the CD: " + me.getTitle());
         }
-        else{
-            for(int i=0; i<MAX_NUMBERS_ORDERED;++i){    //them vao cart
-                if(itemsOrdered[i] == null){
-                    itemsOrdered[i] = disc;
-                    cost += itemsOrdered[i].getCost();  //tang cost
-                    ++ qtyOrdered;                      //tang quantity
-                    System.out.println("success");
-                    break;
-                }   
-            }
+        
+    }
+   
+    public void removeMedia(Media me){//xoa media
+        if(itemsOrdered.contains(me)){
+            itemsOrdered.remove(me);
+            System.out.println("Track removed successfully: " + me.getTitle());
+        }
+        
+    }
+    
+    public void prin(){//in ra thong tin
+        for(Media md : itemsOrdered){
+            System.out.println(md.toString());//cua tung media
         }
     }
     
     public double totalCost(){
+        double cost=0;//tao loop
+        for(Media md : itemsOrdered){//de cong don tong tien
+            cost += md.getCost();
+        }
         return cost;        //tra ve tong tien
     }
     
-    public void removeDigitalVideoDisc(DigitalVideoDisc disc){//remove
-        for(int i=0; i<MAX_NUMBERS_ORDERED;++i){
-                if(disc.equals(itemsOrdered[i])){           // neu tim thay 
-                    cost -= itemsOrdered[i].getCost();      //giam tien
-                    -- qtyOrdered;                          //giam quantity
-                    System.out.println("success");
-                    itemsOrdered[i] = null;                 //xoa
-                    break;
-                }              
-            }
-    }
-    
-    public void searchByTitle(String title){
-        for(int i=0; i<MAX_NUMBERS_ORDERED;++i){
-            if(itemsOrdered[i]!=null && (itemsOrdered[i].getTitle()).equals(title)){
-                System.out.println(itemsOrdered[i]);
-                break;
-            }
-        }
-    }
-    public void print(){
-        int index=0;
-        System.out.println("***********************CART***********************");
-        System.out.println("Ordered Items:");
-        for(int i=0; i<MAX_NUMBERS_ORDERED;++i){
-            if(itemsOrdered[i]!=null ){
-                ++index;
-                System.out.print(index + ". ");
-                System.out.println(itemsOrdered[i]);
-            }
-        }
-        System.out.println("Total cost: " + String.format("%.2f", this.totalCost()));
-        System.out.println("***************************************************");
-    }
+   
 }
