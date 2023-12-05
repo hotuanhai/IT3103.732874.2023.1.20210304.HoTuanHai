@@ -17,6 +17,13 @@ public class Store {
     public void removeMedia(Media me){//xoa media
         itemsInStore.remove(me);
     }
-    
+     public static Media searchMediaByTitle(Store store, String title) {
+            for (Media media : store.itemsInStore) {
+                if (media.getTitle().equals(title)) {
+                    return media; // Found the media with the specified title
+                }
+            }
+            return null; // Media with the specified title not found
+    }
     
 }

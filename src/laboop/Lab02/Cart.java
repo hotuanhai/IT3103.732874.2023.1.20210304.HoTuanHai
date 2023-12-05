@@ -13,7 +13,8 @@ public class Cart {
     public void addMedia(Media me){//them media
         if(!itemsOrdered.contains(me)){
             itemsOrdered.add(me);
-        System.out.println("Track added successfully: " + me.getTitle());
+            System.out.println("Track added successfully: " + me.getTitle());
+            System.out.println("Cart Size "+itemsOrdered.size());
         } else {
             System.out.println("Track already exists in the CD: " + me.getTitle());
         }
